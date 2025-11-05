@@ -1,0 +1,3 @@
+Purpose: This is the "AI Brain Storage." It's a simple directory that stores the output of your training process—the trained model weights.
+Contents: Files like dqn_firewall_v1.h5 (for TensorFlow/Keras) or dqn_firewall_v1.pth (for PyTorch). These files contain the "intelligence" of your agent. You should version them so you can switch between different trained models.
+Role: It acts as the bridge between training and deployment. The simulator writes to this folder, and the live firewall reads from it.

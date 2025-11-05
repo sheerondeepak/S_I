@@ -1,0 +1,6 @@
+Purpose: This is the "Guard on Duty." This is the operational part of the project that you run on a Linux machine to actively protect it. It intercepts real network traffic, uses the pre-trained AI model to make decisions, and enforces them.
+Contents:
+nfqueue_handler.py: The core of the live firewall. This script uses the NetfilterQueue library to connect to the Linux kernel's iptables queue, intercepting packets one by one for analysis.
+logger.py: A utility for logging all firewall activity. It records every packet decision (accept/drop), the source/destination IPs, and why the decision was made. This log is crucial for debugging and is the data source for the web dashboard.
+main.py: The entry point for starting the firewall. It loads the trained model from the models/ directory, initializes the nfqueue_handler, and starts listening for packets.
+Role: This is the deployment stage. It takes the intelligence created in the simulator and applies it to the real world. It runs in inference mode—it only makes predictions, it does not learn on the fly.

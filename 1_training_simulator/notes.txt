@@ -1,0 +1,7 @@
+Purpose: This is the "AI Training Ground" or the "Digital Dojo." You cannot train an AI on a live, unpredictable network. This folder contains everything needed to create a safe, controlled, and repeatable environment where the Reinforcement Learning agent can learn the difference between good and bad traffic through trial and error.
+Contents:
+traffic_generator.py: A script to create realistic but simulated network traffic. It can generate streams of benign traffic (e.g., simulated web browsing) and malicious traffic from the attack_library.
+attack_library.py: Defines various attack scenarios as code (e.g., a function to simulate a port scan, another for a slowloris attack). This gives you labeled "bad" data for training.
+rl_environment.py: The heart of the simulation. It's an OpenAI Gym-style environment where the agent takes an action (accept/drop a packet), and the environment returns the next state (the next packet) and a reward (e.g., +1 for correctly blocking an attack, -1 for dropping good traffic).
+train_agent.py: The main executable for this section. It starts the simulation, creates an RL agent, and runs thousands of episodes to train it. At the end, it saves the trained model weights to the models/ folder.
+Role: This is the first and most critical step. The quality of the agent trained here directly determines how effective your live firewall will be.

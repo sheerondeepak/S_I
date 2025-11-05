@@ -1,0 +1,7 @@
+Purpose: This is the "Shared Toolkit" or the project's core library. It contains all the essential, reusable code that is shared between the training simulator and the live firewall. This is the Single Source of Truth for your core logic, preventing code duplication and ensuring consistency.
+Contents:
+__init__.py: Makes the directory a Python package, so you can import fire_rl_lib in other scripts.
+feature_extractor.py: A critical module that contains the logic for converting a raw network packet (from Scapy) into a numerical vector (a "state") that the AI can understand.
+dqn_agent.py: The complete implementation of your Deep Q-Learning agent. This class will have methods for training (.train()), making predictions (.act()), and saving/loading its model weights.
+config.py: A centralized file for all your project's settings: the length of the feature vector, the neural network architecture, learning rates, etc.
+Role: This is the central nervous system of your project, providing the fundamental building blocks used by all other components.
